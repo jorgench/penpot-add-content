@@ -53,7 +53,7 @@
   }
 
   .flow {
-    display: flex;
+    display: grid;
     gap: var(--gap, var(--spacing-8));
   }
 }

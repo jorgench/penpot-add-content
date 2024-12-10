@@ -48,3 +48,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app {
+  min-height: 100dvh;
+}
+
