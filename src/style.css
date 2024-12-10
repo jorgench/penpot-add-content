@@ -1,0 +1,50 @@
+@layer reset, composition, utility, block, exception;
+
+@import '@penpot/plugin-styles/styles.css';
+@import '@/assets/style/reset.css';
+
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: light dark;
+
+  --spacing-4: 0.25rem;
+  --spacing-8: calc(var(--spacing-4) * 2);
+  --spacing-12: calc(var(--spacing-4) * 3);
+  --spacing-16: calc(var(--spacing-4) * 4);
+  --spacing-20: calc(var(--spacing-4) * 5);
+  --spacing-24: calc(var(--spacing-4) * 6);
+  --spacing-28: calc(var(--spacing-4) * 7);
+  --spacing-32: calc(var(--spacing-4) * 8);
+  --spacing-36: calc(var(--spacing-4) * 9);
+  --spacing-40: calc(var(--spacing-4) * 10);
+  --font-weight-regular: 400;
+  --font-weight-bold: 500;
+  --font-line-height-s: 1.2;
+  --font-line-height-m: 1.4;
+  --font-line-height-l: 1.5;
+  --font-size-s: 12px;
+  --font-size-m: 14px;
+  --font-size-l: 16px;
+  --radius-standard: 0.5rem;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
