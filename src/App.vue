@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import HorizontalTabs from '@/components/HorizontalTabs.vue'
-import ListOptions from './views/ListOptions.vue'
-import { TextOptions } from './features/text'
 import AppProvider from './providers/AppProvider.vue'
 import { inject } from 'vue'
 import { AppProviderKey } from './providers/AppProviderKey'
+import ImageOptions from './views/ImageOptions.vue'
 
 //const language = window.navigator.language
 
@@ -30,7 +29,7 @@ const { theme } = inject(AppProviderKey, {
         ]"
       />
 
-      <ListOptions :options="TextOptions" />
+      <ImageOptions />
     </main>
   </AppProvider>
 </template>

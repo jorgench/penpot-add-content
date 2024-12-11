@@ -25,7 +25,7 @@ function openDetail() {
 async function dispatchOption() {
   const content = await option.handler(shapes.value, option.defaultOption)
   await sendMessageToPenpot({
-    type: 'text',
+    type: option.eventType,
     payload: {
       content,
       shapeIds: shapes.value.map(d => d.id),

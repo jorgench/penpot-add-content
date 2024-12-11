@@ -40,6 +40,7 @@ export const fullname = defineCompleteOption({
   name: 'fullName',
   withOptions: true,
   handler: getFullName(fullNameRepository),
+  eventType: 'text',
   defaultOption: { elementOrder: ['name', 'lastName'] },
 })
 
@@ -60,6 +61,7 @@ export const name = defineCompleteOption<null>({
   name: 'name',
   withOptions: false,
   handler: getName(nameRepository),
+  eventType: 'text',
   defaultOption: null,
 })
 
@@ -78,5 +80,6 @@ export const lastName = defineCompleteOption<null>({
   name: 'lastName',
   withOptions: false,
   handler: getLastName(lastNameRepository),
+  eventType: 'text',
   defaultOption: null as null,
 })

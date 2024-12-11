@@ -10,6 +10,7 @@ export interface OptionAutocomplete<T> {
   withOptions: boolean
   defaultOption: T
   handler: HandlerFunction<T>
+  eventType: 'text' | 'image'
 }
 
 export function defineCompleteOption<T>(arg: OptionAutocomplete<T>): OptionAutocomplete<T> {
