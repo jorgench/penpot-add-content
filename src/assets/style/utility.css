@@ -56,4 +56,8 @@
     display: grid;
     gap: var(--gap, var(--spacing-8));
   }
+
+  .text_start {
+    text-align: start;
+  }
 }

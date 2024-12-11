@@ -1,39 +1,38 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
 import HorizontalTabs from '@/components/HorizontalTabs.vue'
+import ListOptions from './views/ListOptions.vue'
+import { TextOptions } from './features/text'
+import AppProvider from './providers/AppProvider.vue'
+import { inject } from 'vue'
+import { AppProviderKey } from './providers/AppProviderKey'
 
-const theme = ref<string | null>(null)
+//const language = window.navigator.language
 
-onMounted(() => {
-  const url = new URL(window.location.href)
-
-  const initialTheme = url.searchParams.get('theme')
-
-  if (initialTheme) {
-    theme.value = initialTheme as string
-  }
+const { theme } = inject(AppProviderKey, {
+  theme: 'dark',
 })
-
-const language = window.navigator.language || navigator?.browserLanguage
 </script>
 
 <template>
-  <main :data-theme="theme" class="app flow gap_16">
-    <HorizontalTabs
-      :tabs="[
-        { name: 'home', label: 'Inicio' },
-        {
-          name: 'texts',
-          label: 'Textos',
-        },
-        {
-          name: 'image',
-          label: 'Imágenes',
-        },
-      ]"
-    />
-    {{ language }}
-  </main>
+  <AppProvider>
+    <main :data-theme="theme" class="app flow gap_16">
+      <HorizontalTabs
+        :tabs="[
+          { name: 'home', label: 'Inicio' },
+          {
+            name: 'texts',
+            label: 'Textos',
+          },
+          {
+            name: 'image',
+            label: 'Imágenes',
+          },
+        ]"
+      />
+
+      <ListOptions :options="TextOptions" />
+    </main>
+  </AppProvider>
 </template>
 
 <style>
@@ -42,5 +41,6 @@ const language = window.navigator.language || navigator?.browserLanguage
   display: grid;
   gap: var(--spacing-16);
   padding: var(--spacing-16) 0;
+  grid-template-rows: auto 1fr;
 }
 </style>

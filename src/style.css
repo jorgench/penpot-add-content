@@ -2,6 +2,8 @@
 
 @import '@penpot/plugin-styles/styles.css';
 @import '@/assets/style/reset.css';
+@import '@/assets/style/composition.css';
+@import '@/assets/style/utility.css';
 
 
 :root {

@@ -11,3 +11,7 @@ export interface OptionAutocomplete<T> {
   defaultOption: T
   handler: HandlerFunction<T>
 }
+
+export function defineCompleteOption<T>(arg: OptionAutocomplete<T>): OptionAutocomplete<T> {
+  return arg
+}
