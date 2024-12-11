@@ -10,10 +10,15 @@ const { tabs } = defineProps<{
   tabs: TabInfo[]
 }>()
 
+const emit = defineEmits<{
+  (e: 'change', name: string): void
+}>()
+
 const tabSelected = ref(tabs[0] ? tabs[0].name : '')
 
 function selectOtherTab(option: TabInfo) {
   tabSelected.value = option.name
+  emit('change', option.name)
 }
 </script>
 

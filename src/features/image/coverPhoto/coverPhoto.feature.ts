@@ -33,7 +33,7 @@ export const coverPhoto = defineCompleteOption({
   handler: getAutoCompletePhoto,
   icon: 'image',
   eventType: 'image',
-  withOptions: false,
+  withOptions: true,
   defaultOption: {
     grayscale: false,
     blur: 0,

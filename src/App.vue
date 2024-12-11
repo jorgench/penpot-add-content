@@ -3,13 +3,21 @@ import HorizontalTabs from '@/components/HorizontalTabs.vue'
 import AppProvider from './providers/AppProvider.vue'
 import { inject } from 'vue'
 import { AppProviderKey } from './providers/AppProviderKey'
-import ImageOptions from './views/ImageOptions.vue'
+import { useRouter } from 'vue-router'
 
 //const language = window.navigator.language
+
+const router = useRouter()
 
 const { theme } = inject(AppProviderKey, {
   theme: 'dark',
 })
+
+function changePage(newName: string) {
+  router.push({
+    name: newName,
+  })
+}
 </script>
 
 <template>
@@ -27,9 +35,10 @@ const { theme } = inject(AppProviderKey, {
             label: 'Imágenes',
           },
         ]"
+        @change="changePage"
       />
 
-      <ImageOptions />
+      <RouterView />
     </main>
   </AppProvider>
 </template>

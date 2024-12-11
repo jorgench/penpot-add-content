@@ -22,7 +22,8 @@
   "dependencies": {
     "@penpot/plugin-styles": "^1.0.0",
     "@penpot/plugin-types": "^1.0.0",
-    "vue": "^3.5.10"
+    "vue": "^3.5.10",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
