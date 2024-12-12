@@ -20,7 +20,6 @@ export const identifyImage = defineCompleteOption({
   icon: 'image',
   eventType: 'image',
   handler: getIdenticonProfile,
-  withOptions: false,
   defaultOption: null,
 })
 
@@ -30,5 +29,4 @@ export const avatarImage = defineCompleteOption({
   eventType: 'image',
   handler: getUiAvatarProfile,
   defaultOption: null,
-  withOptions: false,
 })

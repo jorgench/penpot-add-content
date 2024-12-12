@@ -12,7 +12,7 @@ export type FullNameOptions = {
   elementOrder: ('lastName' | 'name' | ',')[]
 }
 
-function getFullName(repository: FullNameRepository) {
+function innerGetFullName(repository: FullNameRepository) {
   return async (shapes: Shape[], options: FullNameOptions): Promise<string[]> => {
     if (shapes.length > LimitOfNodes) {
       throw Error('Remplazo por result luego')
@@ -35,11 +35,13 @@ function getFullName(repository: FullNameRepository) {
   }
 }
 
+export const getFullName = innerGetFullName(fullNameRepository)
+
 export const fullname = defineCompleteOption({
   icon: 'text',
   name: 'fullName',
-  withOptions: true,
-  handler: getFullName(fullNameRepository),
+  routeOption: 'fullName',
+  handler: getFullName,
   eventType: 'text',
   defaultOption: { elementOrder: ['name', 'lastName'] },
 })
@@ -59,7 +61,6 @@ function getName(repository: NameRepository) {
 export const name = defineCompleteOption<null>({
   icon: 'text',
   name: 'name',
-  withOptions: false,
   handler: getName(nameRepository),
   eventType: 'text',
   defaultOption: null,
@@ -78,7 +79,6 @@ function getLastName(repository: LastNameRepository) {
 export const lastName = defineCompleteOption<null>({
   icon: 'text',
   name: 'lastName',
-  withOptions: false,
   handler: getLastName(lastNameRepository),
   eventType: 'text',
   defaultOption: null as null,

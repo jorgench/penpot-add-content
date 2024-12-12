@@ -1,3 +1,7 @@
 @layer composition {
-
+  .layout_detail {
+    display: grid;
+    gap: var(--spacing_4);
+    grid-template-rows: 1fr auto;
+  }
 }

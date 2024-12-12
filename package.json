@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "@formkit/drag-and-drop": "^0.2.6",
     "@penpot/plugin-styles": "^1.0.0",
     "@penpot/plugin-types": "^1.0.0",
     "vue": "^3.5.10",

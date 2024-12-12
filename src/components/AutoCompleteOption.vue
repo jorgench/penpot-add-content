@@ -3,6 +3,7 @@ import SvgIcon from '@/components/SvgIcon.vue'
 import { OptionAutocomplete } from '@/features/share/share.domain'
 import { AppProviderExport, AppProviderKey } from '@/providers/AppProviderKey'
 import { inject, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const { shapes, sendMessageToPenpot } = inject(AppProviderKey, {
   theme: 'dark',
@@ -18,8 +19,9 @@ const { option } = defineProps<{
 
 const loading = ref<boolean>(false)
 
+const router = useRouter()
 function openDetail() {
-  console.log('Open detail!!')
+  router.push({ name: option.routeOption })
 }
 
 async function dispatchOption() {
@@ -53,7 +55,7 @@ async function handlerOperation() {
       <SvgIcon :name="option.icon" />
     </div>
     <span class="text_start">{{ option.name }}</span>
-    <button v-if="option.withOptions" class="item_autocomplete__option _block_8" @click.stop="openDetail">
+    <button v-if="option.routeOption" class="item_autocomplete__option _block_8" @click.stop="openDetail">
       <SvgIcon name="menu" />
     </button>
   </button>

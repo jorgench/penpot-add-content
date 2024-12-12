@@ -19,7 +19,7 @@ export async function getUserStaticProfile(shapes: Shape[], options: ProfilePhot
 export const profilePhoto = defineCompleteOption({
   name: 'profilePhoto',
   handler: getUserStaticProfile,
-  withOptions: true,
+  routeOption: 'profilePhonto',
   icon: 'image',
   eventType: 'image',
   defaultOption: {

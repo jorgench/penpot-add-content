@@ -7,7 +7,7 @@ export type HandlerFunction<T> = (shapes: Shape[], options: T) => Promise<string
 export interface OptionAutocomplete<T> {
   icon: IconsName
   name: string
-  withOptions: boolean
+  routeOption?: string
   defaultOption: T
   handler: HandlerFunction<T>
   eventType: 'text' | 'image'

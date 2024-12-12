@@ -5,7 +5,7 @@ const maxSizeImage = 3000
 
 export interface CoverPhotoOptions {
   grayscale: boolean
-  blur: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+  blur: number // max 10
 }
 
 export async function getAutoCompletePhoto(shapes: Shape[], options: CoverPhotoOptions): Promise<string[]> {
@@ -33,7 +33,7 @@ export const coverPhoto = defineCompleteOption({
   handler: getAutoCompletePhoto,
   icon: 'image',
   eventType: 'image',
-  withOptions: true,
+  routeOption: 'coverPhoto',
   defaultOption: {
     grayscale: false,
     blur: 0,
