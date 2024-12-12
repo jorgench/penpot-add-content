@@ -3,10 +3,13 @@ import DetailLayout from '@/components/DetailLayout.vue'
 import useCommandToPenpot from '@/compose/useCommandToPenpot'
 import { getUserStaticProfile, ProfilePhotoOptions } from './profilePhoto.feature'
 import { ref } from 'vue'
+import CRadio from '@/components/CRadio.vue'
 
 const { sendCommand } = useCommandToPenpot<ProfilePhotoOptions>()
 
 const sex = ref<ProfilePhotoOptions['sex']>('neutral')
+
+const options: ProfilePhotoOptions['sex'][] = ['neutral', 'female', 'male']
 
 async function generateProfilePhoto() {
   await sendCommand({
@@ -20,7 +23,13 @@ async function generateProfilePhoto() {
 <template>
   <DetailLayout>
     <template #default>
-      <section class="flow gap_8"></section>
+      <section class="flow gap_8">
+        <ul class="flow gap_8">
+          <li v-for="option in options" :key="option">
+            <CRadio :label="option" :value="option" :name="option" v-model="sex" />
+          </li>
+        </ul>
+      </section>
     </template>
     <template #bottomSticky>
       <button data-appearance="primary" @click="generateProfilePhoto">Aplicar</button>

@@ -45,11 +45,13 @@
 
   .flex {
     display: flex;
+    gap: var(--gap, var(--spacing-8))
   }
 
   .flex-column {
     display: flex;
     flex-direction: column;
+    gap: var(--gap, var(--spacing-8))
   }
 
   .flow {
