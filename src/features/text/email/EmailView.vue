@@ -5,6 +5,7 @@ import useCommandToPenpot from '@/compose/useCommandToPenpot'
 import { computed, ref } from 'vue'
 import { getEmail, type EmailConfigOptions } from './email.feature'
 import { option } from '@/utils/Option'
+import PreviewTexts from '@/components/PreviewTexts.vue'
 
 const { sendCommand } = useCommandToPenpot<EmailConfigOptions>()
 const newDomain = ref<string>('')
