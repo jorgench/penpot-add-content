@@ -7,6 +7,11 @@ const routes = [
   { path: '/image', name: 'image', component: () => import('./views/ImageOptions.vue') },
   { path: '/text/fullName', name: 'fullName', component: () => import('@/features/text/fullname/FullNameView.vue') },
   {
+    path: '/text/email',
+    name: 'email',
+    component: () => import('@/features/text/email/EmailView.vue'),
+  },
+  {
     path: '/image/coverPhoto',
     name: 'coverPhoto',
     component: () => import('@/features/image/coverPhoto/CoverPhotoView.vue'),
