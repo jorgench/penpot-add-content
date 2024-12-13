@@ -56,7 +56,7 @@ async function handlerOperation() {
     </div>
     <span class="text_start">{{ option.name }}</span>
     <button v-if="option.routeOption" class="item_autocomplete__option _block_8" @click.stop="openDetail">
-      <SvgIcon name="menu" />
+      <SvgIcon name="config" />
     </button>
   </button>
 </template>
