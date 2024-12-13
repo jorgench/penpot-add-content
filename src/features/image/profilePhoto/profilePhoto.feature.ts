@@ -20,7 +20,7 @@ export const profilePhoto = defineCompleteOption({
   name: 'profilePhoto',
   handler: getUserStaticProfile,
   routeOption: 'profilePhoto',
-  icon: 'image',
+  icon: 'user',
   eventType: 'image',
   defaultOption: {
     sex: 'neutral',

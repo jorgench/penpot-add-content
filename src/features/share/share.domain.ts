@@ -1,6 +1,6 @@
 import { Shape } from '@penpot/plugin-types'
 
-export type IconsName = 'menu' | 'text' | '@' | 'number' | 'arrow-left' | 'phone' | 'image' | 'money'
+export type IconsName = 'menu' | 'text' | '@' | 'number' | 'arrow-left' | 'phone' | 'image' | 'money' | 'user'
 
 export type HandlerFunction<T> = (shapes: Shape[], options: T) => Promise<string[]>
 
