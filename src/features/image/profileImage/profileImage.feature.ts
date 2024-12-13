@@ -17,7 +17,7 @@ export async function getUiAvatarProfile(shape: Shape[]) {
 
 export const identifyImage = defineCompleteOption({
   name: 'identifyImage',
-  icon: 'image',
+  icon: 'user',
   eventType: 'image',
   handler: getIdenticonProfile,
   defaultOption: null,
@@ -25,7 +25,7 @@ export const identifyImage = defineCompleteOption({
 
 export const avatarImage = defineCompleteOption({
   name: 'avatarImage',
-  icon: 'image',
+  icon: 'user',
   eventType: 'image',
   handler: getUiAvatarProfile,
   defaultOption: null,
