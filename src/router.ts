@@ -12,6 +12,11 @@ const routes = [
     component: () => import('@/features/text/email/EmailView.vue'),
   },
   {
+    path: '/text/currency',
+    name: 'currency',
+    component: () => import('@/features/text/currency/CurrencyView.vue'),
+  },
+  {
     path: '/image/coverPhoto',
     name: 'coverPhoto',
     component: () => import('@/features/image/coverPhoto/CoverPhotoView.vue'),

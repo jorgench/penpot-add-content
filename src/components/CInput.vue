@@ -17,21 +17,3 @@ const idControl = useId()
     <input :id="idControl" class="text-input" :type="type" v-model="data" />
   </div>
 </template>
-
-<style lang="scss">
-.form_control {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-8);
-  z-index: 2;
-
-  & + .form_control {
-    margin-block-start: var(--spacing-16);
-  }
-}
-
-.text-input {
-  padding: var(--spacing-8);
-  border-radius: var(--radius-standard);
-}
-</style>

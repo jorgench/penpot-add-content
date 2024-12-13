@@ -1,0 +1,25 @@
+@layer block {
+  .form_control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+    z-index: 2;
+    width: 100%;
+  }
+
+  
+  .text-input {
+    padding: var(--spacing-8);
+    border-radius: var(--radius-standard);
+    background: var(--background-tertiary);
+    width: 100%;
+  }
+
+  .text-input:hover {
+    background-color: var(--background-quaternary);
+  }
+
+  .text-input:focus {
+    outline-color: var(--accent-tertiary);
+  }
+}

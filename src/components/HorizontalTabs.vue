@@ -37,7 +37,7 @@ function selectOtherTab(option: TabInfo) {
         >
           <span
             :class="[
-              'main_ui_ds_layout_tab_switcher__tab-text',
+              'main_tab_switcher__tab_text',
               { main_ui_ds_layout_tab_switcher__selected: tabOption.name === tabSelected },
             ]"
             >{{ tabOption.label }}</span
@@ -73,6 +73,7 @@ function selectOtherTab(option: TabInfo) {
 
   &__tab_text {
     text-overflow: ellipsis;
+    font-weight: 500;
     width: 100%;
   }
 
