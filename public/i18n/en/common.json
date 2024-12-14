@@ -1,0 +1,15 @@
+{
+  "fullName": "Full Name",
+  "name": "Name",
+  "lastName": "Last Name",
+  "email": "Email",
+  "phone": "Phone",
+  "currency": "Currency",
+  "coverPhoto": "Cover Photo",
+  "profilePhoto": "Profile Photo",
+  "identifyImage": "Vector Image",
+  "avatarImage": "Image with Acronyms",
+  "preview": "Preview",
+  "apply": "Apply",
+  "domain": "Domain"
+}

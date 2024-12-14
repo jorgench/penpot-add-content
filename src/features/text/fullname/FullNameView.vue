@@ -6,6 +6,7 @@ import { useDragAndDrop } from '@formkit/drag-and-drop/vue'
 import DetailLayout from '@/components/DetailLayout.vue'
 import CCheckbox from '@/components/CCheckbox.vue'
 import useCommandToPenpot from '@/compose/useCommandToPenpot'
+import { useTranslation } from 'i18next-vue'
 
 interface InnerOptions {
   option: FullNameOptions['elementOrder'][0]
@@ -13,6 +14,8 @@ interface InnerOptions {
 }
 
 const { sendCommand } = useCommandToPenpot<FullNameOptions>()
+
+const { t } = useTranslation()
 
 const [parentDrop, itemOrder] = useDragAndDrop<InnerOptions>([
   {
@@ -81,7 +84,7 @@ async function generateFullName() {
 
         <ul ref="parentDrop">
           <li v-for="item in itemOrder" :key="item.option">
-            <CCheckbox :label="item.option" v-model="item.active" />
+            <CCheckbox :label="t(item.option)" v-model="item.active" />
           </li>
         </ul>
       </section>
@@ -89,7 +92,7 @@ async function generateFullName() {
     <template #bottomSticky>
       <div class="flow gap_8">
         <PreviewTexts :preview-texts="previewNames" />
-        <button data-appearance="primary" @click="generateFullName">Aplicar</button>
+        <button data-appearance="primary" @click="generateFullName">{{ t('apply') }}</button>
       </div>
     </template>
   </DetailLayout>

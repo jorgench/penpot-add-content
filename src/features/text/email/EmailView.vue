@@ -6,6 +6,9 @@ import { computed, ref } from 'vue'
 import { getEmail, type EmailConfigOptions } from './email.feature'
 import { option } from '@/utils/Option'
 import PreviewTexts from '@/components/PreviewTexts.vue'
+import { useTranslation } from 'i18next-vue'
+
+const { t } = useTranslation()
 
 const { sendCommand } = useCommandToPenpot<EmailConfigOptions>()
 const newDomain = ref<string>('')
@@ -34,14 +37,14 @@ function generateEmail() {
   <DetailLayout>
     <template #default>
       <section class="flow gap_8">
-        <CInput label="domain" v-model:modelValue="newDomain" />
+        <CInput :label="t('domain')" v-model:modelValue="newDomain" />
       </section>
     </template>
 
     <template #bottomSticky>
       <div class="flow gap_8">
         <PreviewTexts :preview-texts="previews" />
-        <button data-appearance="primary" @click="generateEmail">Aplicar</button>
+        <button data-appearance="primary" @click="generateEmail">{{ t('apply') }}</button>
       </div>
     </template>
   </DetailLayout>

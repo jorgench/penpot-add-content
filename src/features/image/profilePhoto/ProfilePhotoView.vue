@@ -4,6 +4,9 @@ import useCommandToPenpot from '@/compose/useCommandToPenpot'
 import { getUserStaticProfile, ProfilePhotoOptions } from './profilePhoto.feature'
 import { ref } from 'vue'
 import CRadio from '@/components/CRadio.vue'
+import { useTranslation } from 'i18next-vue'
+
+const { t } = useTranslation()
 
 const { sendCommand } = useCommandToPenpot<ProfilePhotoOptions>()
 
@@ -33,7 +36,7 @@ async function generateProfilePhoto() {
     </template>
     <template #bottomSticky>
       <div class="flow gap_8">
-        <button data-appearance="primary" @click="generateProfilePhoto">Aplicar</button>
+        <button data-appearance="primary" @click="generateProfilePhoto">{{ t('apply') }}</button>
       </div>
     </template>
   </DetailLayout>

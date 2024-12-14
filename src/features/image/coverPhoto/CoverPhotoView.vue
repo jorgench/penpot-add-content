@@ -6,6 +6,9 @@ import DetailLayout from '@/components/DetailLayout.vue'
 import { ref } from 'vue'
 import { CoverPhotoOptions, getAutoCompletePhoto } from './coverPhoto.feature'
 import useCommandToPenpot from '@/compose/useCommandToPenpot'
+import { useTranslation } from 'i18next-vue'
+
+const { t } = useTranslation()
 
 const grayscale = ref<boolean>(false)
 const blur = ref<number>(0)
@@ -31,7 +34,9 @@ async function generateCoverPhoto() {
       </section>
     </template>
     <template #bottomSticky>
-      <button data-appearance="primary" @click="generateCoverPhoto">Aplicar</button>
+      <div class="flow gap_8">
+        <button data-appearance="primary" @click="generateCoverPhoto">{{ t('apply') }}</button>
+      </div>
     </template>
   </DetailLayout>
 </template>

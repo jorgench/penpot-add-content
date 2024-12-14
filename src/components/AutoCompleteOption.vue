@@ -2,8 +2,11 @@
 import SvgIcon from '@/components/SvgIcon.vue'
 import { OptionAutocomplete } from '@/features/share/share.domain'
 import { AppProviderExport, AppProviderKey } from '@/providers/AppProviderKey'
+import { useTranslation } from 'i18next-vue'
 import { inject, ref } from 'vue'
 import { useRouter } from 'vue-router'
+
+const { t } = useTranslation()
 
 const { shapes, sendMessageToPenpot } = inject(AppProviderKey, {
   theme: 'dark',
@@ -54,7 +57,7 @@ async function handlerOperation() {
     <div class="p_block_8">
       <SvgIcon :name="option.icon" />
     </div>
-    <span class="text_start main_content">{{ option.name }}</span>
+    <span class="text_start main_content">{{ t(option.name) }}</span>
     <button v-if="option.routeOption" class="item_autocomplete__option _block_8" @click.stop="openDetail">
       <SvgIcon name="config" />
     </button>

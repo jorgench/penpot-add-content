@@ -8,10 +8,13 @@ import CRadio from '@/components/CRadio.vue'
 import CountrySearch from './CountrySearch.vue'
 import { CountryCurrencyInfo } from '../services/restCountry.repository'
 import { option } from '@/utils/Option'
+import { useTranslation } from 'i18next-vue'
 
 const props = defineProps<{
   options?: CurrencyOptions
 }>()
+
+const { t } = useTranslation()
 
 const currentOption = ref<CurrencyOptions>(props.options ?? currencyDefaultOption)
 const isCommaSeparator = ref<boolean>(currentOption.value.decimalSeparator === ',')
@@ -86,7 +89,7 @@ function generateCurrency() {
     <template #bottomSticky>
       <div class="flow gap_8">
         <PreviewTexts :preview-texts="previews" />
-        <button data-appearance="primary" @click="generateCurrency">Aplicar</button>
+        <button data-appearance="primary" @click="generateCurrency">{{ t('apply') }}</button>
       </div>
     </template>
   </DetailLayout>
