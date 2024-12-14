@@ -26,7 +26,6 @@ function registerPluginListeners() {
 
 function registerPluginCommands() {
   penpot.ui.onMessage((command: CommandToPenpot) => {
-    console.log('recibe: ', { command })
     handleCommandToPenpot(command)
   })
 }

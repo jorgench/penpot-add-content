@@ -54,7 +54,7 @@ async function handlerOperation() {
     <div class="p_block_8">
       <SvgIcon :name="option.icon" />
     </div>
-    <span class="text_start">{{ option.name }}</span>
+    <span class="text_start main_content">{{ option.name }}</span>
     <button v-if="option.routeOption" class="item_autocomplete__option _block_8" @click.stop="openDetail">
       <SvgIcon name="config" />
     </button>
@@ -66,9 +66,8 @@ async function handlerOperation() {
   .item_autocomplete {
     width: 100%;
     background-color: transparent;
-    display: grid;
+    display: flex;
     gap: var(--spacing-8);
-    grid-template-columns: auto 1fr auto;
     border-radius: var(--radius-standard);
     padding: var(--spacing-16) var(--spacing-8);
     justify-content: center;
@@ -80,6 +79,10 @@ async function handlerOperation() {
 
     &:active {
       background-color: var(--background-quaternary);
+    }
+
+    & .main_content {
+      flex-grow: 1;
     }
 
     &__option {
