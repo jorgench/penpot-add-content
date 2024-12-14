@@ -11,6 +11,7 @@ export type IconsName =
   | 'money'
   | 'user'
   | 'config'
+  | 'start'
 
 export type HandlerFunction<T> = (shapes: Shape[], options: T) => Promise<string[]>
 
