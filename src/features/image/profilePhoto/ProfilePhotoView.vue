@@ -32,7 +32,9 @@ async function generateProfilePhoto() {
       </section>
     </template>
     <template #bottomSticky>
-      <button data-appearance="primary" @click="generateProfilePhoto">Aplicar</button>
+      <div class="flow gap_8">
+        <button data-appearance="primary" @click="generateProfilePhoto">Aplicar</button>
+      </div>
     </template>
   </DetailLayout>
 </template>
