@@ -24,9 +24,7 @@ Los datos viene de APIs públicas:
 
 ## Capturas de Pantalla 🖼️
 
-> _Próximamente_: Añade aquí capturas de pantalla o gifs mostrando el plugin en acción.
-
----
+## ![example how to use plugin](/markdown/caseToUse.gif)
 
 ## Uso 📖
 
