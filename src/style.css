@@ -62,3 +62,28 @@
   font-family: "worksans", "vazirmatn", sans-serif;
 }
 
+.btn_icon {
+  background-color: transparent;
+  border-radius: var(--radius-standard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: var(--spacing-8);
+}
+
+.btn_icon:hover {
+  background-color: var(--background-quaternary);
+  color: var(--accent-tertiary);
+}
+
+.btn_icon:active {
+  background-color: var(--accent-primary);
+  color: var(--foreground-primary);
+}
+
+.btn_icon:focus {
+  outline: 2px solid var(--accent-primary);
+  background-color: var(--background-tertiary);
+  color: var(--foreground-secondary);
+}

@@ -48,6 +48,10 @@
     gap: var(--gap, var(--spacing-8))
   }
 
+  .align_center{
+    align-items: center;
+  }
+
   .flex-column {
     display: flex;
     flex-direction: column;

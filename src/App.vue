@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import HorizontalTabs from '@/components/HorizontalTabs.vue'
 import AppProvider from './providers/AppProvider.vue'
-import { inject, onMounted } from 'vue'
+import { computed, inject, onMounted } from 'vue'
 import { AppProviderKey } from './providers/AppProviderKey'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useTranslation } from 'i18next-vue'
+import SvgIcon from './components/SvgIcon.vue'
 
 //const language = window.navigator.language
 
 const router = useRouter()
+const route = useRoute()
+const isInSubChild = computed<boolean>(() => {
+  return route.path.split('/').length > 2
+})
 
 const { i18next, t } = useTranslation()
 
@@ -31,20 +36,28 @@ function changePage(newName: string) {
 <template>
   <AppProvider>
     <main :data-theme="theme" class="app flow gap_16">
-      <HorizontalTabs
-        :tabs="[
-          { name: 'home', label: t('home') },
-          {
-            name: 'texts',
-            label: t('texts'),
-          },
-          {
-            name: 'image',
-            label: t('images'),
-          },
-        ]"
-        @change="changePage"
-      />
+      <div class="flow gap_4">
+        <HorizontalTabs
+          :tabs="[
+            { name: 'home', label: t('home') },
+            {
+              name: 'texts',
+              label: t('texts'),
+            },
+            {
+              name: 'image',
+              label: t('images'),
+            },
+          ]"
+          @change="changePage"
+        />
+        <section v-if="isInSubChild" class="flex gap_4 align_center">
+          <button class="btn_icon" @click="() => router.go(-1)">
+            <SvgIcon name="arrow-left" />
+          </button>
+          <span>{{ t(route.name as string) }}</span>
+        </section>
+      </div>
 
       <RouterView />
     </main>

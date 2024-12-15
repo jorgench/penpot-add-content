@@ -1,8 +1,19 @@
 <script setup lang="ts">
 import DetailLayout from '@/components/DetailLayout.vue'
 import { useTranslation } from 'i18next-vue'
+import { useRouter } from 'vue-router'
 
 const { t } = useTranslation()
+
+const router = useRouter()
+
+function goToText() {
+  router.push({ name: 'text' })
+}
+
+function goToGithub() {
+  window.open('https://github.com/jorgench/penpot-add-content', '_blank')
+}
 </script>
 
 <template>
@@ -30,8 +41,8 @@ const { t } = useTranslation()
     </template>
     <template #bottomSticky>
       <div class="flex gap_8">
-        <button data-appearance="primary">{{ t('homeStart') }}</button>
-        <button data-appearance="primary">{{ t('homeMoreInfo') }}</button>
+        <button data-appearance="primary" @click="goToText">{{ t('homeStart') }}</button>
+        <button data-appearance="primary" @click="goToGithub">{{ t('homeMoreInfo') }}</button>
       </div>
     </template>
   </DetailLayout>
