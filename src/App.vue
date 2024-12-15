@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import HorizontalTabs from '@/components/HorizontalTabs.vue'
 import AppProvider from './providers/AppProvider.vue'
-import { inject } from 'vue'
+import { inject, onMounted } from 'vue'
 import { AppProviderKey } from './providers/AppProviderKey'
 import { useRouter } from 'vue-router'
+import { useTranslation } from 'i18next-vue'
 
 //const language = window.navigator.language
 
 const router = useRouter()
 
+const { i18next, t } = useTranslation()
+
 const { theme } = inject(AppProviderKey, {
   theme: 'dark',
+})
+
+onMounted(() => {
+  const language = window.navigator.language
+  i18next.changeLanguage(language.includes('es') ? 'es' : 'en')
 })
 
 function changePage(newName: string) {
@@ -25,14 +33,14 @@ function changePage(newName: string) {
     <main :data-theme="theme" class="app flow gap_16">
       <HorizontalTabs
         :tabs="[
-          { name: 'home', label: 'Inicio' },
+          { name: 'home', label: t('home') },
           {
             name: 'texts',
-            label: 'Textos',
+            label: t('texts'),
           },
           {
             name: 'image',
-            label: 'Imágenes',
+            label: t('images'),
           },
         ]"
         @change="changePage"

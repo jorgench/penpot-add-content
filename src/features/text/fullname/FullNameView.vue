@@ -80,7 +80,7 @@ async function generateFullName() {
   <DetailLayout>
     <template #default>
       <section class="flow gap_8">
-        <strong>Orden de elementos:</strong>
+        <strong>{{ t('orderOfElement') }}:</strong>
 
         <ul ref="parentDrop">
           <li v-for="item in itemOrder" :key="item.option">

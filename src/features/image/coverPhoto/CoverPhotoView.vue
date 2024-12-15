@@ -28,9 +28,9 @@ async function generateCoverPhoto() {
   <DetailLayout>
     <template #default>
       <section class="flow gap_8">
-        <CCheckbox label="Apply grayscale" v-model:modelValue="grayscale" />
+        <CCheckbox :label="t('applyGrayscale')" v-model:modelValue="grayscale" />
 
-        <CInput label="Apply Blur" type="number" min="1" max="10" v-model:modelValue.number="blur" />
+        <CInput :label="t('applyBlur')" type="number" min="1" max="10" v-model:modelValue.number="blur" />
       </section>
     </template>
     <template #bottomSticky>

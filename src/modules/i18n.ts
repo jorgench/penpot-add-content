@@ -3,7 +3,7 @@ import HttpApi from 'i18next-http-backend'
 
 try {
   i18next.use(HttpApi).init({
-    lng: 'es',
+    lng: 'en',
     ns: ['common'],
     defaultNS: 'common',
     compatibilityJSON: 'v4',

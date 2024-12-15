@@ -80,9 +80,9 @@ function generateCurrency() {
         </div>
 
         <div class="flow gap_4">
-          <strong>Separadores:</strong>
-          <CRadio label="commaToSeparateLimit" name="type" :value="true" v-model="isCommaSeparator" />
-          <CRadio label="pointToSeparateLimit" name="type" :value="false" v-model="isCommaSeparator" />
+          <strong>{{ t('separators') }}:</strong>
+          <CRadio :label="t('commaToSeparateDecimal')" name="type" :value="true" v-model="isCommaSeparator" />
+          <CRadio :label="t('pointToSeparateDecimal')" name="type" :value="false" v-model="isCommaSeparator" />
         </div>
       </section>
     </template>

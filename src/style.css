@@ -51,7 +51,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "worksans";
+  src: url("https://design.penpot.app/internal/gfonts/font/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2") format("woff2"),
+       url("https://design.penpot.app/fonts/WorkSans-VariableFont.ttf") format("truetype")
+}
+
 #app {
   min-height: 100dvh;
+  font-family: "worksans", "vazirmatn", sans-serif;
 }
 

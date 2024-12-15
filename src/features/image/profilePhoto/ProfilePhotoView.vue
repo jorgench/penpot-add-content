@@ -29,7 +29,7 @@ async function generateProfilePhoto() {
       <section class="flow gap_8">
         <ul class="flow gap_8">
           <li v-for="option in options" :key="option">
-            <CRadio :label="option" :value="option" :name="option" v-model="sex" />
+            <CRadio :label="t(option)" :value="option" :name="option" v-model="sex" />
           </li>
         </ul>
       </section>

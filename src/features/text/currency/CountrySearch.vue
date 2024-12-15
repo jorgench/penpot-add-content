@@ -3,6 +3,7 @@ import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headl
 import { ref, useId, watch } from 'vue'
 import { CountryCurrencyInfo, getCountryInfo } from '../services/restCountry.repository'
 import { useDebounceFn } from '@vueuse/core'
+import { useTranslation } from 'i18next-vue'
 
 const model = defineModel<CountryCurrencyInfo>('modelValue')
 
@@ -31,13 +32,15 @@ watch(model, () => {
   emits('update', model.value)
 })
 
+const { t } = useTranslation()
+
 const idControl = useId()
 </script>
 
 <template>
   <Combobox v-model="model">
     <div class="form_control flow autocomplete">
-      <label :for="idControl">Elige un país</label>
+      <label :for="idControl">{{ t('selectACountry') }}:</label>
       <ComboboxInput
         :id="idControl"
         class="text-input"
