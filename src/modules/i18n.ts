@@ -1,7 +1,7 @@
 import i18next from 'i18next'
 import HttpApi from 'i18next-http-backend'
 
-const urlBase = '/'
+const urlBase = 'https://inquisitive-bienenstitch-a0a3dc.netlify.app/'
 
 try {
   i18next.use(HttpApi).init({
