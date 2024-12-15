@@ -1,6 +1,8 @@
 import i18next from 'i18next'
 import HttpApi from 'i18next-http-backend'
 
+const urlBase = '/'
+
 try {
   i18next.use(HttpApi).init({
     lng: 'en',
@@ -9,7 +11,7 @@ try {
     compatibilityJSON: 'v4',
     debug: true,
     backend: {
-      loadPath: 'http://localhost:4403/i18n/{{lng}}/{{ns}}.json',
+      loadPath: `${urlBase}/i18n/{{lng}}/{{ns}}.json`,
     },
   })
 } catch (e) {
