@@ -36,6 +36,7 @@ async function generateProfilePhoto() {
     </template>
     <template #bottomSticky>
       <div class="flow gap_8">
+        <span>{{ t('dataFrom') }}<a href="https://diverseui.com/" target="_blank">Static Diverseui</a>.</span>
         <button data-appearance="primary" @click="generateProfilePhoto">{{ t('apply') }}</button>
       </div>
     </template>

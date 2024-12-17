@@ -91,6 +91,7 @@ async function generateFullName() {
     </template>
     <template #bottomSticky>
       <div class="flow gap_8">
+        <span>{{ t('dataFrom') }}<a href="https://dummyjson.com/" target="_blank">JSONDummy</a> </span>
         <PreviewTexts :preview-texts="previewNames" />
         <button data-appearance="primary" @click="generateFullName">{{ t('apply') }}</button>
       </div>

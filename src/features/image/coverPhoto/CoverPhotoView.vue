@@ -35,6 +35,7 @@ async function generateCoverPhoto() {
     </template>
     <template #bottomSticky>
       <div class="flow gap_8">
+        <span>{{ t('dataFrom') }}<a href="https://picsum.photos/" target="_blank">picsum photos</a> </span>
         <button data-appearance="primary" @click="generateCoverPhoto">{{ t('apply') }}</button>
       </div>
     </template>

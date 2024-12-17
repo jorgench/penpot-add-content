@@ -43,6 +43,7 @@ function generateEmail() {
 
     <template #bottomSticky>
       <div class="flow gap_8">
+        <span>{{ t('dataFrom') }}<a href="https://dummyjson.com/" target="_blank">JSONDummy</a> </span>
         <PreviewTexts :preview-texts="previews" />
         <button data-appearance="primary" @click="generateEmail">{{ t('apply') }}</button>
       </div>
