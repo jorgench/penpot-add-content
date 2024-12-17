@@ -1,7 +1,7 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
-import { Shape } from '@penpot/plugin-types'
-import { fullNameRepository, lastNameRepository, nameRepository } from '@/features/text/services/dummyJson.repository'
-import { FullNameRepository, LastNameRepository, NameRepository } from './fullname.domain'
+import { type Shape } from '@penpot/plugin-types'
+import { fullNameRepository, lastNameRepository, nameRepository } from '../services/dummyJson.repository'
+import { type FullNameRepository, type LastNameRepository, type NameRepository } from './fullname.domain'
 
 const LimitOfNodes = 20
 
@@ -49,7 +49,7 @@ export const fullname = defineCompleteOption({
 /**
  * Name
  */
-function getName(repository: NameRepository) {
+export function getName(repository: NameRepository) {
   return async (shapes: Shape[]): Promise<string[]> => {
     if (shapes.length > LimitOfNodes) {
       throw Error('Remplazo por result luego')
@@ -67,7 +67,7 @@ export const name = defineCompleteOption<null>({
 })
 
 /**LastName */
-function getLastName(repository: LastNameRepository) {
+export function getLastName(repository: LastNameRepository) {
   return async (shapes: Shape[]): Promise<string[]> => {
     if (shapes.length > LimitOfNodes) {
       throw Error('Remplazo por result luego')

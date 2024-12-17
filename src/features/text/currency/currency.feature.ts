@@ -24,7 +24,6 @@ export type CurrencyOptions = CommaDecimalCurrencyOptions | PointDecimalCurrency
 
 export function getCurrencyClean(size: number, options: CurrencyOptions): string[] {
   const { currency, max = 100000, min = 100, decimalSeparator, thousandsSeparator, currencySymbol } = options
-  console.log({ precision: currency === 'CLP' ? 0 : 2 })
   const values: number[] = Array.from<number>({ length: size })
 
   return values.map(() => {
