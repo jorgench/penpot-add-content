@@ -1,6 +1,6 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
 import { getIntRandom } from '@/utils/utils'
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 
 export interface ProfilePhotoOptions {
   sex: 'male' | 'female' | 'neutral'
