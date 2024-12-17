@@ -5,7 +5,7 @@ const urlBase = 'https://inquisitive-bienenstitch-a0a3dc.netlify.app/'
 
 try {
   i18next.use(HttpApi).init({
-    lng: 'en',
+    lng: 'es',
     ns: ['common'],
     defaultNS: 'common',
     compatibilityJSON: 'v4',

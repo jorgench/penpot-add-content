@@ -16,7 +16,7 @@ export async function getAutoCompletePhoto(shapes: Shape[], options: CoverPhotoO
   if (grayscale) {
     params += '&grayscale'
   }
-  if (blur) {
+  if (blur && blur > 1) {
     params += '&blur=' + blur
   }
 

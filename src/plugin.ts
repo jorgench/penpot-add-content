@@ -6,7 +6,7 @@ registerPluginListeners()
 registerPluginCommands()
 
 function initUiPlugin() {
-  penpot.ui.open('PlaceHolder+', `?theme=${penpot.theme}`)
+  penpot.ui.open('PlaceHolder+ dev', `?theme=${penpot.theme}`)
 }
 
 function registerPluginListeners() {
