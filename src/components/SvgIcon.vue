@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { IconsName } from '@/features/share/share.domain'
+import { useId } from 'vue'
+
+const id = useId()
 
 const { name } = defineProps<{
   name: IconsName
@@ -7,7 +10,8 @@ const { name } = defineProps<{
 </script>
 
 <template>
-  <svg class="svg_icon">
+  <svg class="svg_icon" role="img" :ariaLabelledby="id">
+    <title :id="id">svg icon {{ name }}</title>
     <use :href="`#icon-${name}`"></use>
   </svg>
 </template>
