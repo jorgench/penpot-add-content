@@ -1,4 +1,4 @@
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 
 export type IconsName =
   | 'menu'

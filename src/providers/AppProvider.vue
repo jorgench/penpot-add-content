@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 import { ref, provide, onMounted, onUnmounted } from 'vue'
 import { AppProviderExport, AppProviderKey } from './AppProviderKey'
 import { CommandToPenpot, CommandToUi } from '@/commands/commands'

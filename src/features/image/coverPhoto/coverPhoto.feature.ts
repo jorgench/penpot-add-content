@@ -1,5 +1,5 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 
 const maxSizeImage = 3000
 

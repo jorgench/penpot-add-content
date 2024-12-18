@@ -1,6 +1,6 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
 import { addPrefix, formatWithSeparator, triggerRandomNumbers } from '@/utils/utils'
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 
 export interface PhoneOptions {
   length?: number

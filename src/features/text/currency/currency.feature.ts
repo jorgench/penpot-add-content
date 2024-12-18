@@ -1,6 +1,6 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
 import { getNumberRandom } from '@/utils/utils'
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 import currencyLib from 'currency.js'
 
 interface BaseCurrencyOptions {

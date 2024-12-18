@@ -1,6 +1,6 @@
 import { defineCompleteOption } from '@/features/share/share.domain'
 import { triggerRandomNumbers } from '@/utils/utils'
-import { Shape } from '@penpot/plugin-types'
+import { type Shape } from '@penpot/plugin-types'
 
 export async function getIdenticonProfile(shapes: Shape[]) {
   return shapes.map(() => {
