@@ -53,15 +53,22 @@ async function handlerOperation() {
 </script>
 
 <template>
-  <button :class="['item_autocomplete gap_8', { loading: loading }]" @click="handlerOperation">
-    <div class="p_block_8">
-      <SvgIcon :name="option.icon" />
-    </div>
-    <span class="text_start main_content">{{ t(option.name) }}</span>
-    <button v-if="option.routeOption" class="item_autocomplete__option _block_8" @click.stop="openDetail">
+  <div :class="['item_autocomplete gap_8', { loading: loading }]">
+    <button class="inner_button" @click="handlerOperation">
+      <div class="p_block_8">
+        <SvgIcon :name="option.icon" />
+      </div>
+      <span class="text_start main_content">{{ t(option.name) }}</span>
+    </button>
+    <button
+      v-if="option.routeOption"
+      :ariaLabel="option.name"
+      class="item_autocomplete__option _block_8"
+      @click.stop="openDetail"
+    >
       <SvgIcon name="config" />
     </button>
-  </button>
+  </div>
 </template>
 
 <style lang="scss">
@@ -69,26 +76,38 @@ async function handlerOperation() {
   .item_autocomplete {
     width: 100%;
     background-color: transparent;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     gap: var(--spacing-8);
-    border-radius: var(--radius-standard);
-    padding: var(--spacing-16) var(--spacing-8);
     justify-content: center;
     align-items: center;
 
-    &:hover {
-      background-color: var(--background-tertiary);
-    }
+    & .inner_button {
+      width: 100%;
+      grid-row: 1;
+      grid-column: 1/-1;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      background-color: transparent;
+      gap: var(--spacing-8);
+      border-radius: var(--radius-standard);
+      padding: var(--spacing-16) var(--spacing-8);
+      justify-content: center;
+      align-items: center;
 
-    &:active {
-      background-color: var(--background-quaternary);
-    }
+      &:hover {
+        background-color: var(--background-tertiary);
+      }
 
-    & .main_content {
-      flex-grow: 1;
+      &:active {
+        background-color: var(--background-quaternary);
+      }
     }
 
     &__option {
+      grid-row: 1;
+      grid-column: 3;
       background-color: transparent;
       border-radius: var(--radius-standard);
       display: flex;
@@ -96,6 +115,8 @@ async function handlerOperation() {
       justify-content: center;
       cursor: pointer;
       aspect-ratio: 1;
+      padding: 0 var(--spacing-8);
+
       &:hover {
         background-color: var(--background-quaternary);
         color: var(--accent-tertiary);
