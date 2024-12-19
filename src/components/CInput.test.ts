@@ -20,18 +20,18 @@ describe('CInput.vue', () => {
     })
   }
 
-  it('renders the label correctly', () => {
+  it('When label is provided, should render the label correctly', () => {
     renderComponent({ label: 'Test Label' })
 
     expect(screen.getByText('Test Label')).toBeInTheDocument()
   })
 
-  it('renders the input with the correct type', () => {
+  it('When type is provided, should render the input with the correct type', () => {
     renderComponent({ type: 'password', label: 'Test Label' })
     expect(screen.getByLabelText('Test Label')).toHaveAttribute('type', 'password')
   })
 
-  it('binds the model value correctly', async () => {
+  it('When modelValue changes, should bind the model value correctly', async () => {
     const { rerender, emitted } = renderComponent({ modelValue: 'initial value' })
     const input = screen.getByRole('textbox')
 
