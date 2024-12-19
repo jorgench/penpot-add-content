@@ -31,5 +31,6 @@
   "homeFeature3": "Profile photos",
   "homeStart": "Get Started",
   "homeMoreInfo": "More Info",
-  "dataFrom": "Data from "
+  "dataFrom": "Data from ",
+  "labelOpenDetailOption": "Config the option"
 }

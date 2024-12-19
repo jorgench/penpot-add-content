@@ -54,7 +54,7 @@ async function handlerOperation() {
 
 <template>
   <div :class="['item_autocomplete gap_8', { loading: loading }]">
-    <button class="inner_button" @click="handlerOperation">
+    <button class="inner_button" @click="handlerOperation" :ariaLabel="t(option.name)">
       <div class="p_block_8">
         <SvgIcon :name="option.icon" />
       </div>
@@ -62,7 +62,7 @@ async function handlerOperation() {
     </button>
     <button
       v-if="option.routeOption"
-      :ariaLabel="option.name"
+      :ariaLabel="t('labelOpenDetailOption')"
       class="item_autocomplete__option _block_8"
       @click.stop="openDetail"
     >
