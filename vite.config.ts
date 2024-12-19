@@ -24,4 +24,11 @@ export default defineConfig({
   preview: {
     port: 4403,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
 })
