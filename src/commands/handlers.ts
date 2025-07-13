@@ -64,7 +64,7 @@ function addImageToBoard(shape: Board, imageData: ImageData) {
       fillOpacity: 1,
       fillImage: {
         ...imageData,
-        keepApectRatio: true,
+        keepAspectRatio: true,
       },
     },
   ]
@@ -82,7 +82,7 @@ function addImageToObject(shape: Rectangle | Path | Ellipse, imageData: ImageDat
         fillOpacity: 1,
         fillImage: {
           ...imageData,
-          keepApectRatio: true,
+          keepAspectRatio: true,
         },
       },
     ]
